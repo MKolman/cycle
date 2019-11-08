@@ -1,4 +1,4 @@
-# tracker
+# Tracker
 
 ## Project setup
 ```
