@@ -22,3 +22,6 @@ yarn-error.log*
 *.sublime-project
 *.sublime-workspace
 /tests/e2e/videos/*.mp4
+
+# Pyhton virtualenv
+venv
