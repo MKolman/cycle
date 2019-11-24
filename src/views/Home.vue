@@ -32,30 +32,76 @@
       @click:date="handleDate"
       @click:day="handleDay"
     />
+
+    <v-dialog
+      v-model="showDeleteDialog"
+      width="500"
+    >
+      <v-card>
+        <v-card-title
+          class="headline grey lighten-2"
+          primary-title
+        >
+          Delete event
+        </v-card-title>
+
+        <v-card-text>
+          Do you want to delete event ranging from {{ eventToDelete?eventToDelete.startDate.toLocaleDateString():'past' }} to {{ eventToDelete?eventToDelete.endDate.toLocaleDateString():'future' }}?
+        </v-card-text>
+
+        <v-divider />
+
+        <v-card-actions>
+          <v-spacer />
+          <v-btn
+            text
+            @click="showDeleteDialog = false"
+          >
+            Cancel
+          </v-btn>
+          <v-btn
+            color="primary"
+            text
+            @click="deleteEvent"
+          >
+            Delete
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
 <script>
+  import database from '@/plugins/db.ts'
+
   export default {
     name: 'Home',
     data () {
       return {
         creatingEvent: false,
         currentDate: '2019-11-15',
+        profile: 'default',
+        eventToDelete: null,
+        db: null,
         newEvent: {
           name: 'New Event',
           color: 'primary',
         },
-        events: [
-          {
-            name: 'Krvavec',
-            start: '2018-11-01',
-            end: '2019-11-10',
-          },
-        ],
+        events: [],
       }
     },
     computed: {
+      showDeleteDialog: {
+        get () {
+          return this.eventToDelete !== null
+        },
+        set (newVal) {
+          if (newVal === false) {
+            this.eventToDelete = null
+          }
+        },
+      },
       allEvents () {
         if (this.creatingEvent) {
           return [this.newEvent].concat(this.events)
@@ -71,13 +117,50 @@
         return date.toLocaleString('default', { month: 'long', year: 'numeric' })
       },
     },
+    created () {
+      console.log('Created now')
+      database.getDb().then(db => {
+        this.db = db
+        this.loadEvents()
+      })
+    },
     methods: {
+      deleteEvent () {
+        if (this.eventToDelete !== null) {
+          database.deleteEvent(this.db, {
+            profile: this.profile,
+            startDay: this.eventToDelete.start,
+            endDay: this.eventToDelete.end,
+          }).then(() => {
+            this.loadEvents()
+          })
+          this.eventToDelete = null
+        }
+      },
+      loadEvents () {
+        console.log('Loading events')
+        database.getEvents(this.db).then(eventDays => {
+          let result = {}
+          eventDays.forEach(day => {
+            result[day.startDay + day.endDay] = {
+              name: '',
+              start: day.startDay,
+              end: day.endDay,
+            }
+          })
+          this.events = Object.values(result)
+        })
+      },
       getEventColor (event) {
         return event.color || this.defaultColor
       },
       handleEvent (event) {
         console.log('Event', event)
         console.log('Event', this.events)
+        let ev = event.event
+        ev.startDate = new Date(ev.start)
+        ev.endDate = new Date(ev.end)
+        this.eventToDelete = ev
       },
       handleDay (event) {
         if (this.creatingEvent) {
@@ -86,14 +169,24 @@
       },
       handleDate (event) {
         if (this.creatingEvent) {
-          let ev = { name: '', start: this.newEvent.start, end: event.date }
-          if (ev.start > ev.end) [ev.start, ev.end] = [ev.end, ev.start]
-          this.events.push(ev)
+          this.newEvent.end = event.date
+          if (this.newEvent.start > this.newEvent.end) {
+            [this.newEvent.start, this.newEvent.end] = [this.newEvent.end, this.newEvent.start]
+          }
+          let ev = { name: '', start: this.newEvent.start, end: this.newEvent.end }
+          database.addEvent(this.db, {
+            profile: this.profile,
+            startDay: ev.start,
+            endDay: ev.end,
+          }).then(() => {
+            this.creatingEvent = false
+            this.loadEvents()
+          })
         } else {
           this.newEvent.start = event.date
           this.newEvent.end = event.date
+          this.creatingEvent = true
         }
-        this.creatingEvent = !this.creatingEvent
         console.log('Day', event)
       },
       prev () {

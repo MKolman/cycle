@@ -29,6 +29,17 @@
             <v-list-item-title>About</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item
+          link
+          @click="deleteDatabase"
+        >
+          <v-list-item-action>
+            <v-icon>mdi-delete</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Reset</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -69,13 +80,21 @@
 </template>
 
 <script>
+  import database from '@/plugins/db.ts'
   export default {
     props: {
       source: String,
     },
-
     data: () => ({
       drawer: null,
     }),
+    methods: {
+      deleteDatabase () {
+        if (confirm('Are you sure you want to delete everything?\nThis cannot be undone.')) {
+          database.deleteDb()
+          document.location.reload()
+        }
+      },
+    },
   }
 </script>
