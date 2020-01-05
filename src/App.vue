@@ -45,8 +45,8 @@
 
     <v-app-bar
       app
-      color="indigo"
       dark
+      color="accent"
       clipped-left
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
@@ -70,12 +70,6 @@
         <router-view />
       </v-container>
     </v-content>
-    <v-footer
-      color="indigo"
-      app
-    >
-      <span class="white--text">Made by Maks Kolman &copy; 2019</span>
-    </v-footer>
   </v-app>
 </template>
 
