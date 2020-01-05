@@ -55,7 +55,7 @@
         alt="Tracker logo"
         class="shrink mr-2"
         contain
-        src="/img/icons/icon.svg"
+        src="img/icons/icon.svg"
         transition="scale-transition"
         width="40"
       />
