@@ -9,7 +9,6 @@ let database = {
       let request = window.indexedDB.open(DB_NAME, DB_VERSION)
 
       request.onerror = (e:any) => {
-        console.log('Error opening db', e)
         reject(Error('Error opening db'))
       }
 
@@ -18,7 +17,6 @@ let database = {
       }
 
       request.onupgradeneeded = (e:any) => {
-        console.log('onupgradeneeded')
         let db = e.target.result
 
         if (e.oldVersion < 1) {

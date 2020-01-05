@@ -119,12 +119,10 @@
       },
       currentMonthName () {
         let date = new Date(this.currentDate)
-        console.log(date)
         return date.toLocaleString('default', { month: 'long', year: 'numeric' })
       },
     },
     created () {
-      console.log('Created now')
       database.getDb().then(db => {
         this.db = db
         this.loadEvents()
@@ -144,7 +142,6 @@
         }
       },
       loadEvents () {
-        console.log('Loading events')
         database.getEvents(this.db).then(eventDays => {
           let result = {}
           eventDays.forEach(day => {
@@ -161,8 +158,6 @@
         return event.color || this.defaultColor
       },
       handleEvent (event) {
-        console.log('Event', event)
-        console.log('Event', this.events)
         let ev = event.event
         ev.startDate = new Date(ev.start)
         ev.endDate = new Date(ev.end)
@@ -193,7 +188,6 @@
           this.newEvent.end = event.date
           this.creatingEvent = true
         }
-        console.log('Day', event)
       },
       prev () {
         this.$refs.calendar.prev()
