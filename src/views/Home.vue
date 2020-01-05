@@ -74,13 +74,14 @@
 
 <script>
   import database from '@/plugins/db.ts'
+  import predict from '@/plugins/predict.ts'
 
   export default {
     name: 'Home',
     data () {
       return {
         creatingEvent: false,
-        currentDate: '2019-11-15',
+        currentDate: '2020-01-15',
         profile: 'default',
         eventToDelete: null,
         db: null,
@@ -103,10 +104,15 @@
         },
       },
       allEvents () {
-        if (this.creatingEvent) {
-          return [this.newEvent].concat(this.events)
+        let result = []
+        const prediction = predict(this.events)
+        if (prediction) {
+          result.push(prediction)
         }
-        return this.events
+        if (this.creatingEvent) {
+          result.push(this.newEvent)
+        }
+        return result.concat(this.events)
       },
       defaultColor () {
         return ['primary', 'secondary'][+this.creatingEvent]
