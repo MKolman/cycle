@@ -26,6 +26,7 @@
       v-model="currentDate"
       class="elevation-2"
       type="month"
+      :weekdays="[1, 2, 3, 4, 5, 6, 0]"
       :events="allEvents"
       :event-color="getEventColor"
       @click:event="handleEvent"
@@ -105,8 +106,10 @@
       },
       allEvents () {
         let result = []
-        const prediction = predict(this.events)
+        let prediction = predict(this.events)
         if (prediction) {
+          console.log(prediction)
+          prediction.color = 'secondary'
           result.push(prediction)
         }
         if (this.creatingEvent) {
