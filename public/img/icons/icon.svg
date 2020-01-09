@@ -11,10 +11,10 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg3767"
-   width="550.36951"
-   height="550.36951"
-   viewBox="0 0 550.36948 550.36951"
-   sodipodi:docname="calendar_icon.svg"
+   width="308.20041"
+   height="308.20041"
+   viewBox="0 0 308.2004 308.20041"
+   sodipodi:docname="icon.svg"
    inkscape:version="0.92.4 5da689c313, 2019-01-14"
    inkscape:export-filename="/home/maks/Documents/websites/tracker/public/img/icons/calendar_icon.png"
    inkscape:export-xdpi="89.307274"
@@ -46,47 +46,41 @@
      inkscape:window-height="1056"
      id="namedview3769"
      showgrid="false"
-     inkscape:zoom="0.56780034"
-     inkscape:cx="220.74321"
-     inkscape:cy="13.778194"
+     inkscape:zoom="0.61032704"
+     inkscape:cx="-319.35768"
+     inkscape:cy="110.68543"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg3767" />
-  <circle
-     style="fill:#fec514;fill-opacity:1"
-     id="path3781"
-     cx="275.18475"
-     cy="275.18475"
-     r="275.18475" />
   <rect
-     style="opacity:1;fill:#ffffff;fill-opacity:1"
+     style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.60242772;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="rect4648"
      width="278.33438"
-     height="219.62535"
-     x="135.21335"
-     y="212.96506" />
+     height="219.62534"
+     x="16"
+     y="88.575089" />
   <rect
      style="opacity:1;fill:#adadad;fill-opacity:1"
      id="rect4650"
      width="43.898376"
      height="44.365383"
-     x="165.10159"
-     y="242.69766" />
+     x="45.888245"
+     y="118.30769" />
   <rect
      style="opacity:1;fill:#adadad;fill-opacity:1"
      id="rect4650-5"
      width="43.898376"
      height="44.365383"
-     x="223.10159"
-     y="242.69766" />
+     x="103.88824"
+     y="118.30769" />
   <rect
      style="opacity:1;fill:#adadad;fill-opacity:1"
      id="rect4650-5-6"
      width="43.898376"
      height="44.365383"
-     x="281.4129"
-     y="242.69766"
+     x="162.19955"
+     y="118.30769"
      inkscape:transform-center-x="22.72753"
      inkscape:transform-center-y="-16.033805" />
   <rect
@@ -94,29 +88,29 @@
      id="rect4650-5-2"
      width="43.898376"
      height="44.365383"
-     x="339.4129"
-     y="242.69766" />
+     x="220.19955"
+     y="118.30769" />
   <rect
      style="opacity:1;fill:#adadad;fill-opacity:1"
      id="rect4650-9"
      width="43.898376"
      height="44.365383"
-     x="165.10159"
-     y="300.14728" />
+     x="45.888245"
+     y="175.75731" />
   <rect
-     style="opacity:1;fill:#eb464a;fill-opacity:1"
+     style="opacity:1;fill:#fc766a;fill-opacity:1"
      id="rect4650-5-1"
      width="43.898376"
      height="44.365383"
-     x="223.10159"
-     y="300.14728" />
+     x="103.88824"
+     y="175.75731" />
   <rect
-     style="opacity:1;fill:#eb464a;fill-opacity:1"
+     style="opacity:1;fill:#fc766a;fill-opacity:1"
      id="rect4650-5-6-2"
      width="43.898376"
      height="44.365383"
-     x="281.4129"
-     y="300.14728"
+     x="162.19955"
+     y="175.75731"
      inkscape:transform-center-x="22.72753"
      inkscape:transform-center-y="-16.033805" />
   <rect
@@ -124,29 +118,29 @@
      id="rect4650-5-2-7"
      width="43.898376"
      height="44.365383"
-     x="339.4129"
-     y="300.14728" />
+     x="220.19955"
+     y="175.75731" />
   <rect
      style="opacity:1;fill:#adadad;fill-opacity:1"
      id="rect4650-0"
      width="43.898376"
      height="44.365383"
-     x="165.10156"
-     y="358.14728" />
+     x="45.888214"
+     y="233.75731" />
   <rect
      style="opacity:1;fill:#adadad;fill-opacity:1"
      id="rect4650-5-9"
      width="43.898376"
      height="44.365383"
-     x="223.10156"
-     y="358.14728" />
+     x="103.88821"
+     y="233.75731" />
   <rect
      style="opacity:1;fill:#adadad;fill-opacity:1"
      id="rect4650-5-6-3"
      width="43.898376"
      height="44.365383"
-     x="281.4129"
-     y="358.14728"
+     x="162.19955"
+     y="233.75731"
      inkscape:transform-center-x="22.72753"
      inkscape:transform-center-y="-16.033805" />
   <rect
@@ -154,18 +148,18 @@
      id="rect4650-5-2-6"
      width="43.898376"
      height="44.365383"
-     x="339.4129"
-     y="358.14728" />
+     x="220.19955"
+     y="233.75731" />
   <rect
      style="opacity:1;fill:#49a1af;fill-opacity:1"
      id="rect4588"
-     width="278.33441"
+     width="278.33438"
      height="72.229958"
-     x="135.21335"
-     y="140.73511" />
+     x="16"
+     y="16.34514" />
   <g
      id="g4622"
-     transform="translate(-263.29675,-103.02917)">
+     transform="translate(-382.5101,-227.41914)">
     <rect
        y="235.04688"
        x="455.48459"
@@ -189,7 +183,7 @@
        style="opacity:1;fill:#2f4e51;fill-opacity:1;stroke-width:0.9837538" />
   </g>
   <g
-     transform="translate(-117.12339,-103.18484)"
+     transform="translate(-236.33674,-227.57481)"
      id="g4622-6">
     <rect
        y="235.04688"
