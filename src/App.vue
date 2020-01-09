@@ -18,6 +18,19 @@
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
+        <v-list-item
+          v-if="installPrompt !== null"
+          @click="installPrompt.prompt()"
+        >
+          <v-list-item-action>
+            <v-icon>mdi-cloud-download</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Install</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
         <v-list-item
           link
           to="/about"
@@ -29,6 +42,7 @@
             <v-list-item-title>About</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+
         <v-list-item
           link
           @click="deleteDatabase"
@@ -80,8 +94,17 @@
       source: String,
     },
     data: () => ({
+      installPrompt: null,
       drawer: null,
     }),
+    mounted () {
+      window.addEventListener('beforeinstallprompt', e => {
+        // Prevent Chrome 76 and later from showing the mini-infobar
+        e.preventDefault()
+        // Stash the event so it can be triggered later.
+        this.installPrompt = e
+      })
+    },
     methods: {
       deleteDatabase () {
         if (confirm('Are you sure you want to delete everything?\nThis cannot be undone.')) {
