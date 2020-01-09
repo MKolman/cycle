@@ -64,15 +64,6 @@
       clipped-left
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-
-      <v-img
-        alt="Tracker logo"
-        class="shrink mr-2"
-        contain
-        src="img/icons/icon.svg"
-        transition="scale-transition"
-        width="40"
-      />
       <v-toolbar-title>Tracker</v-toolbar-title>
     </v-app-bar>
 
