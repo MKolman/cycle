@@ -1,6 +1,9 @@
 module.exports = {
-  'transpileDependencies': [
+  transpileDependencies: [
     'vuetify',
   ],
-  'publicPath': '/tracker/',
+  publicPath: '/cycle/',
+  pwa: {
+    themeColor: '#49a1af',
+  },
 }

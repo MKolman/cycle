@@ -1,4 +1,4 @@
-const DB_NAME = 'tracker'
+const DB_NAME = 'cycle'
 const DB_VERSION = 1
 let database = {
   deleteDb () {

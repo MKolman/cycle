@@ -108,7 +108,6 @@
         let result = []
         let prediction = predict(this.events)
         if (prediction) {
-          console.log(prediction)
           prediction.color = 'secondary'
           result.push(prediction)
         }

@@ -64,7 +64,7 @@
       clipped-left
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>Tracker</v-toolbar-title>
+      <v-toolbar-title>Cycle</v-toolbar-title>
     </v-app-bar>
 
     <v-content>

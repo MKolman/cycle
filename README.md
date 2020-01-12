@@ -1,4 +1,4 @@
-# Tracker
+# Cycle
 
 ## Project setup
 ```
