@@ -4,5 +4,8 @@ module.exports = {
   ],
   pwa: {
     themeColor: '#49a1af',
+    workboxOptions: {
+      exclude: ['CNAME'],
+    },
   },
 }
