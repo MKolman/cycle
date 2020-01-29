@@ -5,7 +5,7 @@ module.exports = {
   pwa: {
     themeColor: '#49a1af',
     workboxOptions: {
-      exclude: ['CNAME'],
+      exclude: ['CNAME', 'google127d846da64dc5ee.html'],
     },
   },
   css: {
