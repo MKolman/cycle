@@ -77,12 +77,16 @@
   import database from '@/plugins/db.ts'
   import predict from '@/plugins/predict.ts'
 
+  function formatDate (date) {
+    return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+  }
+
   export default {
     name: 'Home',
     data () {
       return {
         creatingEvent: false,
-        currentDate: '2020-01-15',
+        currentDate: formatDate(new Date()),
         profile: 'default',
         eventToDelete: null,
         db: null,
