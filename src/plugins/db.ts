@@ -1,12 +1,12 @@
 const DB_NAME = 'cycle'
 const DB_VERSION = 1
-let database = {
+const database = {
   deleteDb () {
     indexedDB.deleteDatabase(DB_NAME)
   },
   async getDb () {
     return new Promise((resolve, reject) => {
-      let request = window.indexedDB.open(DB_NAME, DB_VERSION)
+      const request = window.indexedDB.open(DB_NAME, DB_VERSION)
 
       request.onerror = (e:any) => {
         reject(Error('Error opening db'))
@@ -17,7 +17,7 @@ let database = {
       }
 
       request.onupgradeneeded = (e:any) => {
-        let db = e.target.result
+        const db = e.target.result
 
         if (e.oldVersion < 1) {
           /*
@@ -29,7 +29,7 @@ let database = {
             day: '2019-11-23',
           }
           */
-          let objectStore = db.createObjectStore('eventDays', { autoIncrement: true, keyPath: 'id' })
+          const objectStore = db.createObjectStore('eventDays', { autoIncrement: true, keyPath: 'id' })
           objectStore.createIndex('by_profile', 'profile', { unique: false })
 
           objectStore.createIndex('by_startDay', 'startDay', { unique: false })
@@ -48,16 +48,16 @@ let database = {
 
   async getEvents (db:IDBDatabase) {
     return new Promise((resolve, reject) => {
-      let trans = db.transaction(['eventDays'], 'readonly')
+      const trans = db.transaction(['eventDays'], 'readonly')
       trans.oncomplete = (e:any) => {
         resolve(eventDays)
       }
 
-      let store = trans.objectStore('eventDays')
-      let eventDays:object[] = []
+      const store = trans.objectStore('eventDays')
+      const eventDays:object[] = []
 
       store.openCursor().onsuccess = (e:any) => {
-        let cursor = e.target.result
+        const cursor = e.target.result
         if (cursor) {
           eventDays.push(cursor.value)
           cursor.continue()
@@ -68,13 +68,13 @@ let database = {
 
   async addEvent (db:IDBDatabase, event:any) {
     return new Promise((resolve, reject) => {
-      let trans = db.transaction(['eventDays'], 'readwrite')
+      const trans = db.transaction(['eventDays'], 'readwrite')
       trans.oncomplete = (e:any) => {
         resolve()
       }
       const startDay = new Date(event.startDay)
       const endDay = new Date(event.endDay)
-      let store = trans.objectStore('eventDays')
+      const store = trans.objectStore('eventDays')
       for (let day = startDay; day <= endDay; day.setDate(day.getDate() + 1)) { // eslint-disable-line no-unmodified-loop-condition
         store.add({
           profile: event.profile,
@@ -90,11 +90,11 @@ let database = {
 
   async deleteEvent (db:IDBDatabase, event:any) {
     return new Promise((resolve, reject) => {
-      let trans = db.transaction(['eventDays'], 'readwrite')
+      const trans = db.transaction(['eventDays'], 'readwrite')
       trans.oncomplete = (e:any) => {
         resolve()
       }
-      let store = trans.objectStore('eventDays')
+      const store = trans.objectStore('eventDays')
       store.index('by_profile_startDay_endDay')
         .openKeyCursor(IDBKeyRange.only(
           [event.profile, event.startDay, event.endDay]))

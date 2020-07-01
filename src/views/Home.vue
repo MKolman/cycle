@@ -109,8 +109,8 @@
         },
       },
       allEvents () {
-        let result = []
-        let prediction = predict(this.events)
+        const result = []
+        const prediction = predict(this.events)
         if (prediction) {
           prediction.color = 'secondary'
           result.push(prediction)
@@ -124,7 +124,7 @@
         return ['primary', 'secondary'][+this.creatingEvent]
       },
       currentMonthName () {
-        let date = new Date(this.currentDate)
+        const date = new Date(this.currentDate)
         return date.toLocaleString('default', { month: 'long', year: 'numeric' })
       },
     },
@@ -149,7 +149,7 @@
       },
       loadEvents () {
         database.getEvents(this.db).then(eventDays => {
-          let result = {}
+          const result = {}
           eventDays.forEach(day => {
             result[day.startDay + day.endDay] = {
               name: '',
@@ -164,7 +164,7 @@
         return event.color || this.defaultColor
       },
       handleEvent (event) {
-        let ev = event.event
+        const ev = event.event
         ev.startDate = new Date(ev.start)
         ev.endDate = new Date(ev.end)
         this.eventToDelete = ev
@@ -180,7 +180,7 @@
           if (this.newEvent.start > this.newEvent.end) {
             [this.newEvent.start, this.newEvent.end] = [this.newEvent.end, this.newEvent.start]
           }
-          let ev = { name: '', start: this.newEvent.start, end: this.newEvent.end }
+          const ev = { name: '', start: this.newEvent.start, end: this.newEvent.end }
           database.addEvent(this.db, {
             profile: this.profile,
             startDay: ev.start,

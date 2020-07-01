@@ -10,7 +10,7 @@ const mean = (arr:Array<number>) => Math.round(
 const ISODate = (date:Date) => date.toISOString().substr(0, 10)
 
 function dateDiff (first:string, second:string):number {
-  let t = (new Date(first)).valueOf() - (new Date(second)).valueOf()
+  const t = (new Date(first)).valueOf() - (new Date(second)).valueOf()
   return Math.round(t / (1000 * 60 * 60 * 24))
 }
 
@@ -20,13 +20,13 @@ function predict (events:Array<any>) {
     if (a.start > b.start) return 1
     return a.start === b.start ? 0 : -1
   })
-  let data:{ [key: string]: number[] } = {
+  const data:{ [key: string]: number[] } = {
     len: [],
     beg: [],
     end: [],
   }
   for (let i = 0; i < events.length; i++) {
-    let ev = events[i]
+    const ev = events[i]
     data.len.push(dateDiff(ev.end, ev.start))
     if (i !== 0) {
       data.beg.push(dateDiff(ev.start, events[i - 1].start))
@@ -37,8 +37,8 @@ function predict (events:Array<any>) {
   data.beg = jitter(data.beg, 29)
   data.end = jitter(data.end, 29)
   const ev = events[events.length - 1]
-  let start = new Date(ev.start)
-  let end = new Date(ev.end)
+  const start = new Date(ev.start)
+  const end = new Date(ev.end)
   start.setDate(start.getDate() + mean(data.beg))
   end.setDate(end.getDate() + mean(data.end))
   return { start: ISODate(start), end: ISODate(end), name: 'predict' }
