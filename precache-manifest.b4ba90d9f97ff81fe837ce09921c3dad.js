@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "242b2f59e3fcf8e93552",
-    "url": "/css/app.7c14c4d6.css"
+    "revision": "de6f9cf211b884f8acbb",
+    "url": "/css/app.875947f4.css"
   },
   {
-    "revision": "242b2f59e3fcf8e93552",
-    "url": "/css/app.7c14c4d6.css.map"
+    "revision": "de6f9cf211b884f8acbb",
+    "url": "/css/app.875947f4.css.map"
   },
   {
-    "revision": "8eb5cb3c2af4bcd65ef4",
-    "url": "/css/chunk-vendors.679db31a.css"
+    "revision": "706bf3c86a74a358b10a",
+    "url": "/css/chunk-vendors.0afca1bc.css"
   },
   {
-    "revision": "8eb5cb3c2af4bcd65ef4",
-    "url": "/css/chunk-vendors.679db31a.css.map"
+    "revision": "706bf3c86a74a358b10a",
+    "url": "/css/chunk-vendors.0afca1bc.css.map"
   },
   {
     "revision": "0f57a242d57ec4fc814f46830fd67ae5",
@@ -76,35 +76,35 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/icons/safari-pinned-tab.svg"
   },
   {
-    "revision": "7bb42af074355114602311a9a8659b9f",
+    "revision": "ff28d375c0efe602847dcd4d7d4d686b",
     "url": "/index.html"
   },
   {
-    "revision": "67cde8414c807d3ddafb",
-    "url": "/js/about.b5b6781b.js"
+    "revision": "2bee09ae15ff0c51a5ea",
+    "url": "/js/about.602ec0bd.js"
   },
   {
-    "revision": "67cde8414c807d3ddafb",
-    "url": "/js/about.b5b6781b.js.map"
+    "revision": "2bee09ae15ff0c51a5ea",
+    "url": "/js/about.602ec0bd.js.map"
   },
   {
-    "revision": "242b2f59e3fcf8e93552",
-    "url": "/js/app.63e39954.js"
+    "revision": "de6f9cf211b884f8acbb",
+    "url": "/js/app.5d4fce50.js"
   },
   {
-    "revision": "242b2f59e3fcf8e93552",
-    "url": "/js/app.63e39954.js.map"
+    "revision": "de6f9cf211b884f8acbb",
+    "url": "/js/app.5d4fce50.js.map"
   },
   {
-    "revision": "8eb5cb3c2af4bcd65ef4",
-    "url": "/js/chunk-vendors.22344e85.js"
+    "revision": "706bf3c86a74a358b10a",
+    "url": "/js/chunk-vendors.8fb2301b.js"
   },
   {
-    "revision": "8eb5cb3c2af4bcd65ef4",
-    "url": "/js/chunk-vendors.22344e85.js.map"
+    "revision": "706bf3c86a74a358b10a",
+    "url": "/js/chunk-vendors.8fb2301b.js.map"
   },
   {
-    "revision": "37e4893bdd7f42fce8fde52bdbf5885a",
+    "revision": "bddfd3ba7616634ef33f6e8ec14f35be",
     "url": "/manifest.json"
   },
   {
