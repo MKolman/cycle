@@ -1,0 +1,6 @@
+services:
+  node:
+    image: vuejs/ci
+    working_dir: /home/cycle
+    volumes:
+      - ".:/home/cycle"

@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: '/cycle/',
   transpileDependencies: [
     'vuetify',
   ],
