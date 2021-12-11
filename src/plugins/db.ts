@@ -54,7 +54,7 @@ const database = {
       }
 
       const store = trans.objectStore('eventDays')
-      const eventDays:object[] = []
+      const eventDays:{profile: string, startDay: Date, endDate: Date}[] = []
 
       store.openCursor().onsuccess = (e:any) => {
         const cursor = e.target.result
@@ -99,7 +99,7 @@ const database = {
         .openKeyCursor(IDBKeyRange.only(
           [event.profile, event.startDay, event.endDay]))
         .onsuccess = (e:any) => {
-          var cursor = e.target.result
+          const cursor = e.target.result
           if (cursor) {
             store.delete(cursor.primaryKey)
             cursor.continue()

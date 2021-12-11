@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+
   env: {
     node: true,
   },
@@ -8,14 +9,19 @@ module.exports = {
     '@vue/standard',
     '@vue/typescript',
     'vuetify',
+    '@vue/typescript/recommended',
   ],
+
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   },
+
   parserOptions: {
     parser: '@typescript-eslint/parser',
+    ecmaVersion: 2020,
   },
+
   overrides: [
     {
       files: [
